@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head> 
+    <title>Verificador de identidade</title>
+  </head>
+  <body>
+    <h1> Verificador de identidade </h1>
+    <input type="text" id="campoNome" size="50" placeholder="Digite seu primeiro nome">
+    <p><input type="text" id="campoFormação" size="50" placeholder="Você se formou em cinema na UFJF?">
+    <p><button onclick="verificarDados()">Verificar dados</button>
+    <p id="resultado"></p>  
+    <script>
+      function verificarDados() {
+        const nome = document.getElementById ("campoNome").value;
+        const formação = document.getElementById("campoFormação").value;
+      
+        const resultadoNome = nome.toLowerCase() === "jéssica";
+        const resultadoFormação = formação.toLowerCase() === "sim";
+  
+        if (resultadoNome && resultadoFormação) {
+        document.getElementById("resultado").textContent = "É a Jessy! ✅";
+        document.getElementById("resultado").style.color = "green";
+      } else { 
+        document.getElementById("resultado").textContent = "Não é a Jessy! ❌" 
+        document.getElementById("resultado").style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
